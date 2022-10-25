@@ -28,7 +28,7 @@ public class Categorie_service {
 		}else {
 			Collections.sort(oProduitCateg, new ComparatorCategorie());
 			for (int j = 0; j <10 && j<oProduitCateg.size() ; j++) {
-				System.out.println(j + 1 + "." + oProduitCateg.get(j).getNom()+", score : " +oProduitCateg.get(j).getNutritions().toUpperCase()+", categorie : "+oProduitCateg.get(j).getCategorie().getNom());
+				System.out.println(j + 1 + "." + oProduitCateg.get(j).getNom()+", score : " +oProduitCateg.get(j).getNutritions().getScore().toUpperCase()+", categorie : "+oProduitCateg.get(j).getCategorie().getNom());
 			}
 		}
 	}

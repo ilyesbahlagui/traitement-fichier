@@ -8,7 +8,7 @@ public class ComparatorCategorie  implements Comparator<Produit> {
 		public int compare(Produit o1, Produit o2) {
 
 			// pour les int on le fait manuellement avec des return et des if
-			int result= o1.getNutritions().compareTo(o2.getNutritions());
+			int result= o1.getNutritions().getScore().compareTo(o2.getNutritions().getScore());
 
 			return result;
 		}

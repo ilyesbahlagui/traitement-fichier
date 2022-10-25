@@ -30,7 +30,7 @@ public class Marque_service {
 		}else {
 			Collections.sort(oProduitMarque, new ComparatorMarque());
 			for (int j = 0; j <10 && j<oProduitMarque.size() ; j++) {
-				System.out.println(j + 1 + "." + oProduitMarque.get(j).getNom()+", score : " +oProduitMarque.get(j).getNutritions().toUpperCase());
+				System.out.println(j + 1 + "." + oProduitMarque.get(j).getNom()+", score : " +oProduitMarque.get(j).getNutritions().getScore().toUpperCase());
 			}
 		}
 	}

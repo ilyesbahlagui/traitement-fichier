@@ -19,8 +19,10 @@ public class Stockk {
 	public void getListProduit() throws IOException {
 		Path pathFile = Paths.get("C:\\work-space-java-2\\traitement-fichier\\src\\yuka\\open-food-facts.csv");
 		List<String> lines = Files.readAllLines(pathFile, StandardCharsets.UTF_8);
+		
 		for (int i = 1; i < lines.size(); i++) {
 			String[] lineProduit = lines.get(i).split("\\|",-1);
+			System.out.println(lines.get(i));
 
 			//Instance des objets
 			Categorie categorie = new Categorie(lineProduit[0]);
@@ -30,8 +32,10 @@ public class Stockk {
 			//valeur sans instances
 			String nomProduit = lineProduit[2];
 			String scoreNutri=lineProduit[3];
+			ScoreNutri scoreNutr=new ScoreNutri(lineProduit[3]);
 //			double energie=Double.valueOf(lineProduit[5]);
 //			System.out.println("indice ou je tombre "+i);
+
 			double energie=lineProduit[5]==""?0:Double.valueOf(lineProduit[5]);
 			 double graisse=lineProduit[6]==""?0:Double.valueOf(lineProduit[6]);
 			 double sucres=lineProduit[7]==""?0:Double.valueOf(lineProduit[7]);
@@ -45,7 +49,7 @@ public class Stockk {
 //			System.out.println(getListAdditif(lineProduit[29]));
 //			System.out.println(getListAllergene(lineProduit[28]));
 //			
-			this.produit.add(new Produit(nomProduit, categorie, marque, getListIngredient(lineProduit[4]), getListAllergene(lineProduit[28]), getListAdditif(lineProduit[29]), scoreNutri, energie, graisse, sucres, fibres, proteines, sel));
+			this.produit.add(new Produit(nomProduit, categorie, marque, getListIngredient(lineProduit[4]), getListAllergene(lineProduit[28]), getListAdditif(lineProduit[29]), scoreNutr, energie, graisse, sucres, fibres, proteines, sel));
 
 		}
 		

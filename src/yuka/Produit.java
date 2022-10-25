@@ -9,7 +9,7 @@ public class Produit {
 	private List<Ingredient> ingredient = new ArrayList<Ingredient>();
 	private List<Allergene> allergene = new ArrayList<Allergene>();
 	private List<Additif> additif = new ArrayList<Additif>();
-	private String nutritions;
+	private ScoreNutri nutritions;
 	private String nom;
 	private double energie;
 	private double graisse;
@@ -19,7 +19,7 @@ public class Produit {
 	private double sel;
 
 	public Produit( String nom,Categorie categorie, Marque marque, List<Ingredient> ingredient, List<Allergene> allergene,
-			List<Additif> additif, String scoreNutri, double energie, double graisse, double sucres,
+			List<Additif> additif, ScoreNutri scoreNutri, double energie, double graisse, double sucres,
 			double fibres, double proteines, double sel) {
 		
 		this.categorie = categorie;
@@ -98,11 +98,11 @@ public class Produit {
 		this.additif = additif;
 	}
 
-	public String getNutritions() {
+	public ScoreNutri getNutritions() {
 		return nutritions;
 	}
 
-	public void setNutritions(String nutritions) {
+	public void setNutritions(ScoreNutri nutritions) {
 		this.nutritions = nutritions;
 	}
 
